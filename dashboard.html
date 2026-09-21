@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Online Library</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <h2>Library Dashboard</h2>
+        <div>
+            <span id="user-email" style="color: white; margin-right: 10px;"></span>
+            <button id="logout-btn">Logout</button>
+        </div>
+    </nav>
+    <div class="container">
+        <!-- Add Book Form (Visible only to Admin) -->
+        <h2>Add New Book</h2>
+        <form id="add-book-form" style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <input type="text" id="book-title" placeholder="Title" required>
+            <input type="text" id="book-author" placeholder="Author" required>
+            <input type="text" id="book-genre" placeholder="Genre" required>
+            <button type="submit" class="btn">Add Book</button>
+        </form>
+
+        <!-- Book List Section -->
+        <h2>Book List</h2>
+        <input type="text" id="search-input" class="search-box" placeholder="Search by title or author...">
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th id="actions-header">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="books-table-body">
+            </tbody>
+        </table>
+    </div>
+
+    <!-- External JavaScript Modules -->
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/books.js"></script>
+</body>
+</html>
