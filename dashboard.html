@@ -2,47 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Online Library</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="dashboard-bg">
     <nav>
         <h2>Library Dashboard</h2>
-        <div>
-            <span id="user-email" style="color: white; margin-right: 10px;"></span>
-            <button id="logout-btn">Logout</button>
+        <div class="user-nav">
+            <span id="user-email-display" class="user-email">Loading...</span>
+            <button id="logout-btn" class="btn-logout">Logout</button>
         </div>
     </nav>
-    <div class="container">
-        <!-- Add Book Form (Visible only to Admin) -->
-        <h2>Add New Book</h2>
-        <form id="add-book-form" style="display: flex; gap: 10px; margin-bottom: 20px;">
-            <input type="text" id="book-title" placeholder="Title" required>
-            <input type="text" id="book-author" placeholder="Author" required>
-            <input type="text" id="book-genre" placeholder="Genre" required>
-            <button type="submit" class="btn">Add Book</button>
-        </form>
+
+    <main class="dashboard-container">
+        <!-- Add New Book Section -->
+        <section class="dashboard-card form-section">
+            <h3 class="section-title">Add New Book</h3>
+            <form id="add-book-form" class="dashboard-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="book-title">Title</label>
+                        <input type="text" id="book-title" placeholder="Enter book title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-author">Author</label>
+                        <input type="text" id="book-author" placeholder="Enter author name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-genre">Genre</label>
+                        <input type="text" id="book-genre" placeholder="Enter genre (e.g. Fiction, Tech)" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-add">Add Book</button>
+            </form>
+        </section>
 
         <!-- Book List Section -->
-        <h2>Book List</h2>
-        <input type="text" id="search-input" class="search-box" placeholder="Search by title or author...">
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Genre</th>
-                    <th id="actions-header">Actions</th>
-                </tr>
-            </thead>
-            <tbody id="books-table-body">
-            </tbody>
-        </table>
-    </div>
+        <section class="dashboard-card list-section">
+            <div class="list-header">
+                <h3 class="section-title">Book Collection</h3>
+            </div>
 
-    <!-- External JavaScript Modules -->
-    <script type="module" src="js/auth.js"></script>
+            <!-- Full Width Centered Large Search Bar -->
+            <div class="search-container">
+                <input type="text" id="search-input" class="search-input-lg" placeholder="🔍 Search books by title, author, or genre...">
+            </div>
+
+            <div class="table-wrapper">
+                <table class="book-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Genre</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="book-list">
+                        <!-- Book items will be loaded dynamically by books.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
     <script type="module" src="js/books.js"></script>
 </body>
 </html>

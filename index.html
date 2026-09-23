@@ -2,22 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Library System</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="home-bg">
     <nav>
         <h2>Online Library</h2>
         <div>
-            <a href="index.html">Home</a>
+            <a href="index.html" class="active">Home</a>
             <a href="login.html">Login</a>
             <a href="register.html">Register</a>
         </div>
     </nav>
-    <div class="container" style="text-align: center; padding: 50px 20px;">
-        <h1>Welcome to Online Library System</h1>
-        <p style="margin: 20px 0;">Manage and explore your library books easily.</p>
-        <a href="login.html"><button class="btn">Get Started</button></a>
-    </div>
+
+    <!-- Split Layout Hero Wrapper -->
+    <main class="hero-split-wrapper">
+        <!-- Left Column: Content & Description -->
+        <div class="hero-left-content">
+            <span class="badge-tag">Smart Academic Library Portal</span>
+            <h1>Welcome to Online Library System</h1>
+            <p>Manage, explore, and access catalog books seamlessly from anywhere with real-time sync.</p>
+            
+            <div class="features-list">
+                <div class="feature-item">
+                    <h4>Digital Book Catalog</h4>
+                    <p>Browse through an organized collection with genres and authors.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Real-Time Search</h4>
+                    <p>Locate any book instantly using dynamic filtering.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Secure Access Control</h4>
+                    <p>Role-based authorization for administrative controls.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Action Box with Continue Button -->
+        <div class="hero-right-action">
+            <div class="action-card">
+                <h3>Get Started Today</h3>
+                <p>Sign in to explore your personalized digital library bookshelf.</p>
+                <a href="login.html" class="btn btn-continue">Continue &rarr;</a>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
